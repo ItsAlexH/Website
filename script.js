@@ -35,9 +35,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Cross-Page Active Navigation Highlighting
-    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    const currentPath = window.location.pathname; 
+    
     document.querySelectorAll('.nav-links a').forEach(link => {
-        if (link.getAttribute('href') === currentPath) {
+        const linkPath = link.getAttribute('href');
+        
+        // Check if the current URL contains the link's path
+        // Special rule for the root ("/") to prevent it from always highlighting
+        if (linkPath === '/' && (currentPath === '/' || currentPath.endsWith('index.html'))) {
+            link.classList.add('active');
+        } else if (linkPath !== '/' && currentPath.includes(linkPath)) {
             link.classList.add('active');
         } else {
             link.classList.remove('active');
