@@ -9,15 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Adds the snow image with a dark gradient overlay so text remains readable */
-        #hero {
-            background: linear-gradient(to bottom, rgba(15, 17, 21, 0.4) 0%, rgba(15, 17, 21, 1) 100%), url('assets/snow.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed; /* Creates a slight parallax effect when scrolling */
-        }
-    </style>
 </head>
 <body>
     <div class="dynamic-bg"></div>
@@ -25,6 +16,9 @@
     <header>
         <div class="container nav-inner">
             <a class="logo" href="/">Alexander Haywood</a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
             <ul class="nav-links">
                 <li><a href="/" class="accent">Home</a></li>
                 <li><a href="publications">Publications</a></li>
@@ -35,12 +29,12 @@
         </div>
     </header>
 
-    <section id="hero">
+    <section id="hero" class="hero-section">
         <div class="container reveal">
             <h1>Hi, my name is <span class="accent">Alexander Haywood</span></h1>
             <p style="font-size: 1.5rem; color: var(--text-primary); margin: 0 auto; max-width: 800px;">I am a student researcher in Condensed Matter Theory.</p>
             
-            <div style="margin-top: 2.5rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <div class="hero-actions">
                 <a href="https://drive.google.com/file/d/1yTiLJWytm6LipYYL7_iB_qHPJ2gGSKFv/view?usp=sharing" target="_blank" class="btn btn-primary"><i class="fa fa-university"></i> Resume</a>
                 <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=LzRSGlgAAAAJJ" target="_blank" class="btn btn-secondary"><i class="fa fa-google"></i> Google Scholar</a>
                 <a href="https://www.linkedin.com/in/alexander-haywood" target="_blank" class="btn btn-secondary"><i class="fa fa-linkedin"></i> LinkedIn</a>
@@ -53,14 +47,14 @@
         <div class="container reveal">
             <h2>About Me</h2>
             <div class="vision-grid">
-                <div class="value-card" style="grid-column: 1 / -1; display: flex; gap: 3rem; align-items: center; flex-wrap: wrap;">
-                    <div style="flex: 1; min-width: 300px;">
+                <div class="about-card value-card" style="grid-column: 1 / -1;">
+                    <div class="about-text">
                         <p style="margin-bottom: 1rem; max-width: 100%;">I am a physics researcher at Princeton University with a background in electrical/computer and mechanical/aerospace engineering. I hold an M.Eng. in Electrical and Computer Engineering and a B.S.E. in Mechanical and Aerospace Engineering (with minors in Physics and Applied Computational Mathematics), both from Princeton.</p>
                         <p style="margin-bottom: 1rem; max-width: 100%;">My research sits at the intersection of condensed matter theory and computational physics. I am particularly interested in quantum dynamics and phase structure in many-body systems characterized by discrete global/subsystem symmetries and non-trivial geometries. My work primarily leverages analytical frameworks like Mean Field Theory (MFT) alongside numerical techniques such as Exact Diagonalization (ED) and tensor network methods including the Density Matrix Renormalization Group (DMRG). I use these tools to classify low-energy phases, study symmetry-breaking phenomena, and classify thermodynamic behaviors.</p>
                         <p style="max-width: 100%;">This site showcases my academic projects, research contributions, and technical experiences—all of which have shaped my path toward pursuing a PhD this fall as a U.S. Department of Energy Computational Science Graduate Fellowship (DOE CSGF) fellow.</p>
                     </div>
-                    <div style="flex: 0 0 300px; margin: 0 auto;">
-                        <img src="assets/Portrait.jpg" alt="Alexander Haywood Portrait" style="width: 100%; height: 350px; object-fit: cover; object-position: top; border-radius: var(--radius); border: 1px solid var(--border); box-shadow: var(--shadow);">
+                    <div class="about-image">
+                        <img src="assets/Portrait.jpg" alt="Alexander Haywood Portrait">
                     </div>
                 </div>
             </div>

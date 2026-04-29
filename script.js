@@ -2,6 +2,51 @@ document.addEventListener('DOMContentLoaded', () => {
     // Dynamic Year in Footer
     document.getElementById('year').textContent = new Date().getFullYear();
 
+    // Mobile Navigation Toggle
+    const navToggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (navToggle && navLinks) {
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            // Animate hamburger to X
+            const spans = navToggle.querySelectorAll('span');
+            if (navLinks.classList.contains('active')) {
+                spans[0].style.transform = 'rotate(45deg) translate(6px, 6px)';
+                spans[1].style.opacity = '0';
+                spans[2].style.transform = 'rotate(-45deg) translate(6px, -6px)';
+            } else {
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
+
+        // Close mobile nav when a link is clicked
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navLinks.classList.remove('active');
+                    const spans = navToggle.querySelectorAll('span');
+                    spans[0].style.transform = 'none';
+                    spans[1].style.opacity = '1';
+                    spans[2].style.transform = 'none';
+                }
+            });
+        });
+
+        // Close mobile nav when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!navToggle.contains(e.target) && !navLinks.contains(e.target) && navLinks.classList.contains('active')) {
+                navLinks.classList.remove('active');
+                const spans = navToggle.querySelectorAll('span');
+                spans[0].style.transform = 'none';
+                spans[1].style.opacity = '1';
+                spans[2].style.transform = 'none';
+            }
+        });
+    }
+
     // Scroll Reveal Animation using Intersection Observer
     const revealElements = document.querySelectorAll('.reveal');
     const observerOptions = { threshold: 0.15, rootMargin: '0px 0px -50px 0px' };
@@ -29,9 +74,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Subtle Parallax on Dynamic Background
+    let ticking = false;
     window.addEventListener('scroll', () => {
-        const scrolled = window.scrollY;
-        document.querySelector('.dynamic-bg').style.transform = `translateY(${scrolled * 0.15}px) scale(1.05)`;
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                const scrolled = window.scrollY;
+                document.querySelector('.dynamic-bg').style.transform = `translateY(${scrolled * 0.15}px) scale(1.05)`;
+                ticking = false;
+            });
+            ticking = true;
+        }
     });
 
     // Cross-Page Active Navigation Highlighting
@@ -40,8 +92,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.nav-links a').forEach(link => {
         const linkPath = link.getAttribute('href');
         
-        // Check if the current URL contains the link's path
-        // Special rule for the root ("/") to prevent it from always highlighting
         if (linkPath === '/' && (currentPath === '/' || currentPath.endsWith('index.html'))) {
             link.classList.add('active');
         } else if (linkPath !== '/' && currentPath.includes(linkPath)) {
