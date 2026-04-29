@@ -1,212 +1,89 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Personal Website - Projects</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="granim.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        /* Add CSS for navigation positioning if needed */
-        nav {
-            position: relative; /* Or 'fixed' */
-            z-index: 1000;
-            width: 100%;
-        }
-        .main-content {
-            padding: 5% 5%;
-            padding-top: calc(5% + 60px); /* Adjust based on nav height */
-            position: relative;
-            z-index: 1;
-        }
-        /* Style for the projects content container (similar to publications) */
-        .projects-content {
-            text-align: left;
-            max-width: 900px; /* Adjust this value for desired width */
-            margin: 0 auto; /* Centers the container */
-            padding-top: 20px; /* Add some space below the heading */
-        }
-        .projects-content p {
-            margin-bottom: 10px; /* Space between paragraphs */
-        }
-        .projects-content h3 {
-            margin-top: 20px; /* Space above subheadings */
-            margin-bottom: 15px;
-        }
-        .projects-content hr {
-            margin: 30px 0;
-        }
+    <title>Alexander Haywood | Projects</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dynamic-bg"></div>
 
-        /* CSS for the active navigation link (copied from previous instructions) */
-        .navbar-nav .nav-link {
-            color: gray; /* Set inactive links to gray */
-        }
-        .navbar-nav .nav-link.active {
-            color: black !important; /* Make active link black, use !important to override Bootstrap */
-            font-weight: 500; /* Optional: make it a bit bolder */
-        }
-        .navbar-nav .nav-link:hover {
-            color: #333; /* Slightly darker gray on hover for inactive links */
-        }
-        .navbar-nav .nav-link.active:hover {
-            color: black !important; /* Keep active link black on hover */
-        }
-        .navbar-brand {
-            color: black !important; /* Make the brand name black */
-        }
-    </style>
-  </head>
-  <body>
-
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="index.html">Alexander Haywood</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="publications.html">Publications</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="teaching.html">Teaching</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="projects.html">Projects</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="photos.html">Photos</a>
-
-              </li>
+    <header>
+        <div class="container nav-inner">
+            <a class="logo" href="index.html">Alexander Haywood</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="teaching.html">Teaching</a></li>
+                <li><a href="projects.html" class="accent">Projects</a></li>
+                <li><a href="photos.html">Photos</a></li>
             </ul>
-            </ul>
-          </div>
         </div>
-      </nav>
-<!-- 
-    
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">Alexander Haywood</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link" href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="publications.html">Publications</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="teaching.html">Teaching</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="projects.html">Projects</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="photos.html">Photos</a>
-              </li>
-            </ul>
-            </li>
-          </ul>
+    </header>
+
+    <section class="section alt-bg" style="padding-top: 150px; min-height: 100vh;">
+        <div class="container reveal">
+            <h2>My Projects</h2>
+            <p style="margin-bottom: 3rem;">A collection of my personal and academic projects.</p>
+
+            <h3 style="margin-top: 2rem;">Research & Theory</h3>
+            <div class="services-grid">
+                <div class="service-card reveal">
+                    <h3>Condensed Matter Symmetry Breaking Theory</h3>
+                    <p class="accent" style="font-style: italic; margin-bottom: 1rem;">Ongoing</p>
+                    <p>My research focuses on understanding novel phases of matter through studying the ground state symmetry breaking of unique system symmetries. Specifically, I investigate the quantum breakdown model, a quantum analog of dielectric breakdown...</p>
+                    <a href="https://drive.google.com/file/d/1afVeXFeJFlPIGq2DeE9EIdu86arV-Ll6/view?usp=sharing" target="_blank" class="btn btn-secondary" style="margin-top: 1.5rem; padding: 0.5rem 1rem; font-size: 0.9rem;">View Details</a>
+                </div>
+
+                <div class="service-card reveal">
+                    <h3>Magnetohydrodynamic (MHD) Instability Theory</h3>
+                    <p class="accent" style="font-style: italic; margin-bottom: 1rem;">2023-2025</p>
+                    <p>For my senior thesis, I studied magnetohydrodynamic (MHD) instabilities: drivers of turbulence in both laboratory and astrophysical plasmas. I studied these instabilities via both initial-value simulations and a novel spectral method.</p>
+                    <a href="https://drive.google.com/drive/folders/1Ua-ou-RHP7XSs_8Zm_6vzs5P2Aer0mdH?usp=sharing" target="_blank" class="btn btn-secondary" style="margin-top: 1.5rem; padding: 0.5rem 1rem; font-size: 0.9rem;">View Details</a>
+                </div>
+
+                <div class="service-card reveal">
+                    <h3>Magnetic Reconnection Thruster Theory</h3>
+                    <p class="accent" style="font-style: italic; margin-bottom: 1rem;">Spring 2023</p>
+                    <p>Performed literature review and analyzed magnetic reconnection thruster initial-value NIMROD simulation data to classify viability for implementation and construction.</p>
+                    <a href="https://drive.google.com/file/d/1PoA9QG_QUIBM-g7zYK7d5_i_2VtiS86Q/view?usp=sharing" target="_blank" class="btn btn-secondary" style="margin-top: 1.5rem; padding: 0.5rem 1rem; font-size: 0.9rem;">View Details</a>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 5rem;">Robotics & Mechatronics</h3>
+            <div class="services-grid">
+                <div class="service-card reveal">
+                    <h3>Princeton Racing Electric</h3>
+                    <p class="accent" style="font-style: italic; margin-bottom: 1rem;">2021-2024</p>
+                    <p>Designed and built a fully electric vehicle to compete in the Formula Hybrid Competition. As the mechanical lead and one of three chief engineers for two years, I focused on the design and integration of all mechanical and low-voltage electrical systems.</p>
+                    <a href="https://princetonracingelectric.com/" target="_blank" class="btn btn-secondary" style="margin-top: 1.5rem; padding: 0.5rem 1rem; font-size: 0.9rem;">View Details</a>
+                </div>
+
+                <div class="service-card reveal">
+                    <h3>Autonomous Drone</h3>
+                    <p class="accent" style="font-style: italic; margin-bottom: 1rem;">Fall 2022</p>
+                    <p>Designed and manufactured an autonomous drone capable of navigating a predefined course using computer vision. This involved mechanical design, simulation, and manufacture, sensor integration, and real-time control algorithms.</p>
+                    <a href="https://drive.google.com/file/d/15bDNWx9g_iHHfVzmi17-Q3qdR-axWjC_/view?usp=sharing" target="_blank" class="btn btn-secondary" style="margin-top: 1.5rem; padding: 0.5rem 1rem; font-size: 0.9rem;">View Details</a>
+                </div>
+
+                <div class="service-card reveal">
+                    <h3>Keyboard Design</h3>
+                    <p class="accent" style="font-style: italic; margin-bottom: 1rem;">2021-2023</p>
+                    <p>Engineered two distinct mechanical keyboard systems, from initial concept to multiple functional prototypes. My work involved detailed mechanical chassis design using CAD, precise PCB layout in Altium, and robust keyboard firmware development in C.</p>
+                    <a href="https://tigersats.princeton.edu/" target="_blank" class="btn btn-secondary" style="margin-top: 1.5rem; padding: 0.5rem 1rem; font-size: 0.9rem;">View Details</a>
+                </div>
+            </div>
         </div>
-      </div>
-    </nav> -->
+    </section>
 
-    <canvas id="canvas-image-blending" style="height: 300px;"></canvas>
-    <div class="main-content" style="text-align: center; width: 100%;">
-      <center>
-
-        <h2 style="padding-bottom: 20px;">My Projects</h2>
-        <p>A collection of my personal and academic projects.</p>
-
-        <div class="projects-content">
-
-          <h3>Research & Theory</h3>
-          <hr style="margin: 30px 0;">
-          <p style="font-weight: bold; margin-bottom: 5px;">Condensed Matter Symmetry Breaking Theory</p>
-          <p style="font-style: italic; margin-bottom: 5px;">Ongoing</p>
-          <p style="margin-bottom: 10px;">My research focuses on understanding novel phases of matter through studying the ground state symmetry breaking of unique system symmetries. Specifically, I investigate the quantum breakdown model, a quantum analog of dielectric breakdown, and the breaking of its exponential symmetry. In particular, I utilized numerical tools such as Hartree-Fock mean field theory, Exact Diagonalization (ED), and Density Matrix Renormalization Group (DMRG) simulations to explore the ground states of this model.</p>
-          <p><a href="https://drive.google.com/file/d/1afVeXFeJFlPIGq2DeE9EIdu86arV-Ll6/view?usp=sharing" target="_blank">View Project Details</a></p>
-          <hr style="margin: 30px 0;">
-
-          <p style="font-weight: bold; margin-bottom: 5px;">Magnetohydrodynamic (MHD) Instability Theory</p>
-          <p style="font-style: italic; margin-bottom: 5px;">2023-2025</p>
-          <p style="margin-bottom: 10px;">For my senior thesis, I studied magnetohydrodynamic (MHD) instabilities: drivers of turbulence in both laboratory and astrophysical plasmas. In particular, I studied these instabilities via both initial-value simulations and a novel spectral method to define the spectrum of competing modes, resulting in two publications.</p>
-          <p><a href="https://drive.google.com/drive/folders/1Ua-ou-RHP7XSs_8Zm_6vzs5P2Aer0mdH?usp=sharing" target="_blank">View Project Details</a></p>
-          <hr style="margin: 30px 0;">
-
-          <p style="font-weight: bold; margin-bottom: 5px;">Magnetic Reconnection Thruster Theory</p>
-          <p style="font-style: italic; margin-bottom: 5px;">Spring 2023</p>
-          <p style="margin-bottom: 10px;">Peformed literature review and analyzed magnetic reconnection thruster initial-value NIMROD simulation data to classify viability for implementation and construction.</p>
-          <p><a href="https://drive.google.com/file/d/1PoA9QG_QUIBM-g7zYK7d5_i_2VtiS86Q/view?usp=sharing" target="_blank">View Project Details</a></p>
-          <hr style="margin: 30px 0;">
-
-          <p style="font-weight: bold; margin-bottom: 5px;">Magnetoplasmadynamic Thruster Diagnostics</p>
-          <p style="font-style: italic; margin-bottom: 5px;">2022-2023</p>
-          <p style="margin-bottom: 10px;">Designed, manufactured, and verified an AC Helmholtz coil to test and calibrate B-Dot probes that measured time-varying magnetic fields. Implemented an FFT algorithm to take B-Dot data and acquire time-varying magnetic field measurements.</p>
-          <!-- <p><a href="link-to-project-details-quantum.html" target="_blank">View Project Details</a></p> -->
-          <hr style="margin: 30px 0;">
-
-          <h3>Robotics & Mechatronics</h3>
-          <hr style="margin: 30px 0;">
-
-          <p style="font-weight: bold; margin-bottom: 5px;">Princeton Racing Electric</p>
-          <p style="font-style: italic; margin-bottom: 5px;">2021-2024</p>
-          <p style="margin-bottom: 10px;"> Designed and built a fully electric vehicle to compete in the Formula Hybrid Competition. As the mechanical lead and one of three chief engineers for two years, I focused on the design and integration of all mechanical and low-voltage electrical systems. I personally designed and oversaw manufacture of two revisions of the vehicle chassis and suspension. In these chassis, I also worked closely with a team engineers to optimize the vehicle dynamics through suspension design and simulation.</p>
-          <p><a href="https://princetonracingelectric.com/" target="_blank">View Project Details</a></p>
-          <!-- <p><a href="assets/image_421403.png" target="_blank">View Image Example</a></p> -->
-
-          <hr style="margin: 30px 0;"> <p style="font-weight: bold; margin-bottom: 5px;">Autonomous Drone</p>
-          <p style="font-style: italic; margin-bottom: 5px;">Fall 2022</p>
-          <p style="margin-bottom: 10px;">Designed and manufactured an autonomous drone capable of navigating a predefined course using computer vision. This involved mechanical design, simulation, and manufacture, sensor integraiton, and real-time control algorithms.</p>
-          <p><a href="https://drive.google.com/file/d/15bDNWx9g_iHHfVzmi17-Q3qdR-axWjC_/view?usp=sharing" target="_blank">View Project Details</a></p>
-
-          <hr style="margin: 30px 0;"> <p style="font-weight: bold; margin-bottom: 5px;">Keyboard Design</p>
-          <p style="font-style: italic; margin-bottom: 5px;">2021-2023</p>
-          <p style="margin-bottom: 10px;">Engineered two distinct mechanical keyboard systems, from initial concept to multiple functional prototypes. My work involved detailed mechanical chassis design using CAD, precise PCB layout in Altium, and robust keyboard firmware development in C.</p>
-          <p><a href="https://tigersats.princeton.edu/" target="_blank">View Project Details</a></p>
-
-          <hr style="margin: 30px 0;"> <p style="font-weight: bold; margin-bottom: 5px;">Small Satellite Solar Panels</p>
-          <p style="font-style: italic; margin-bottom: 5px;">Summer 2021</p>
-          <p style="margin-bottom: 10px;">Developed an inexpensive solar panel platform for small satellite systems. This project involved PCB design and extensive testing of monocrystalline solar cells in different circuit configurations.</p>
-          <p><a href="https://tigersats.princeton.edu/" target="_blank">View Project Details</a></p>
-
-          <!-- <h3>Software Development</h3>
-          <hr style="margin: 30px 0;">
-
-          <p style="font-weight: bold; margin-bottom: 5px;">Web-based Data Visualization Tool</p>
-          <p style="font-style: italic; margin-bottom: 5px;">Summer 2023</p>
-          <p style="margin-bottom: 10px;">Developed a responsive web application for interactive visualization of scientific datasets. Utilized React.js for the frontend and Python/Flask for the backend API, incorporating d3.js for advanced charting.</p>
-          <p><a href="link-to-project-details-data-viz.html" target="_blank">View Project Details</a></p>
-
-          <hr style="margin: 30px 0;">
-
-          <p style="font-weight: bold; margin-bottom: 5px;">Machine Learning Model for Predictive Analysis</p>
-          <p style="font-style: italic; margin-bottom: 5px;">Fall 2022</p>
-          <p style="margin-bottom: 10px;">Implemented a machine learning model using TensorFlow to predict material properties based on simulation data. Focused on data preprocessing, model training, and performance evaluation.</p>
-          <p><a href="link-to-project-details-ml.html" target="_blank">View Project Details</a></p> -->
-
-
-
-
-    
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; <span id="year"></span> Alexander Haywood. All rights reserved.</p>
         </div>
+    </footer>
 
-
-      </center>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-  </body>
+    <script src="script.js"></script>
+</body>
 </html>

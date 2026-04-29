@@ -1,190 +1,144 @@
 <!DOCTYPE html>
- <html lang="en" dir="ltr">
- <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Personal Website - Publications</title> <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <script src="granim.min.js"></script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="styles.css">
-  <style>
-  /* Add CSS for navigation positioning if needed */
-  nav {
-  position: relative; /* Or 'fixed' */
-  z-index: 1000;
-  width: 100%;
-  }
-  .main-content {
-  padding: 5% 5%;
-  padding-top: calc(5% + 60px); /* Adjust based on nav height */
-  position: relative;
-  z-index: 1;
-  }
-  /* Style for the publications content container */
-  .publications-content {
-  text-align: left;
-  max-width: 900px; /* Adjust this value for desired width */
-  margin: 0 auto; /* Centers the container */
-  padding-top: 20px; /* Add some space below the heading */
-  }
-  .publications-content p {
-  margin-bottom: 10px; /* Space between paragraphs */
-  }
-  .publications-content h3 {
-  margin-top: 20px; /* Space above subheadings */
-  margin-bottom: 15px;
-  }
-  .publications-content hr {
-  margin: 30px 0;
-  }
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Alexander Haywood | Photos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .photo-img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+            cursor: pointer; /* Lets the user know it is clickable */
+        }
+        .photo-img:hover {
+            transform: scale(1.02);
+            box-shadow: var(--shadow);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
 
-  /* Styles for the photo gallery */
-  .photo-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px; /* Space between photos */
-  margin-top: 30px;
-  justify-content: center; /* Center the gallery */
-  }
+        /* Modal Styles */
+        .image-modal {
+            display: none; 
+            position: fixed; 
+            z-index: 1000; 
+            left: 0; top: 0; 
+            width: 100%; height: 100%; 
+            background-color: rgba(15, 17, 21, 0.95); 
+            backdrop-filter: blur(8px);
+        }
+        .modal-content {
+            margin: auto; 
+            display: block; 
+            max-width: 90%; 
+            max-height: 90vh;
+            margin-top: 5vh; 
+            border-radius: 8px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+            object-fit: contain; /* Ensures the whole image is visible */
+        }
+        .close-modal {
+            position: absolute; 
+            top: 20px; right: 40px; 
+            color: #e8eaed; 
+            font-size: 40px; 
+            font-weight: bold; 
+            cursor: pointer; 
+            transition: 0.3s;
+        }
+        .close-modal:hover { color: var(--accent); }
+    </style>
+</head>
+<body>
+    <div class="dynamic-bg"></div>
 
-  .gallery-item {
-  flex: 1 0 calc(33.33% - 10px); /* Roughly one-third width with spacing */
-  max-width: calc(33.33% - 10px);
-  overflow: hidden; /* Prevent potential overflow */
-  border-radius: 5px; /* Optional: rounded corners */
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
-  }
+    <header>
+        <div class="container nav-inner">
+            <a class="logo" href="index.html">Alexander Haywood</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="teaching.html">Teaching</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="photos.html" class="accent">Photos</a></li>
+            </ul>
+        </div>
+    </header>
 
-  .gallery-item img {
-  width: 100%;
-  height: auto;
-  display: block; /* Remove any extra space below the image */
-  }
+    <section class="section" style="padding-top: 150px; min-height: 100vh;">
+        <div class="container reveal">
+            <h2>Photos</h2>
+            
+            <div class="vision-grid" style="grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; margin-top: 2rem;">
+                <div class="reveal"><img src="assets/DSCF3236.JPG" alt="Photography" class="photo-img"></div>
+                <div class="reveal"><img src="assets/DSCF3247.JPG" alt="Photography" class="photo-img"></div>
+                <div class="reveal"><img src="assets/DSCF3344.JPG" alt="Photography" class="photo-img"></div>
+                <div class="reveal"><img src="assets/DSCF2400.jpg" alt="Photography" class="photo-img"></div>
+                <div class="reveal"><img src="assets/DSCF1681_1.jpg" alt="Photography" class="photo-img"></div>
+                <div class="reveal"><img src="assets/DSCF2190-2_1.jpg" alt="Photography" class="photo-img"></div>
+                <div class="reveal"><img src="assets/DSCF2492-2.jpg" alt="Photography" class="photo-img"></div>
+                <div class="reveal"><img src="assets/DSCF8288-min.jpg" alt="Photography" class="photo-img"></div>
+                <div class="reveal"><img src="assets/DSCF7818-min.jpg" alt="Photography" class="photo-img"></div>
+                <div class="reveal"><img src="assets/DSCF1262.JPG" alt="Photography" class="photo-img"></div>
+                <div class="reveal"><img src="assets/DSCF3700-min.jpg" alt="Photography" class="photo-img"></div>
+                <div class="reveal"><img src="assets/DSCF6783.jpg" alt="Photography" class="photo-img"></div>
+                <div class="reveal"><img src="assets/DSCF8147-min.jpg" alt="Photography" class="photo-img"></div>
+                <div class="reveal"><img src="assets/DSCF8149-min.jpg" alt="Photography" class="photo-img"></div>
+                <div class="reveal"><img src="assets/DSCF1612_1.jpg" alt="Photography" class="photo-img"></div>
+                <div class="reveal"><img src="assets/P1000744.jpg" alt="Photography" class="photo-img"></div>
+                <div class="reveal"><img src="assets/P1000854.jpg" alt="Photography" class="photo-img"></div>
+                <div class="reveal"><img src="assets/P1000596.jpg" alt="Photography" class="photo-img"></div>
+                <div class="reveal"><img src="assets/DSCF3890-min.jpg" alt="Photography" class="photo-img"></div>
+                <div class="reveal"><img src="assets/DSCF3807-min.jpg" alt="Photography" class="photo-img"></div>
+                <div class="reveal"><img src="assets/DSCF8490-min.jpg" alt="Photography" class="photo-img"></div>
+            </div>
+        </div>
+    </section>
 
-  /* Responsive adjustments for smaller screens */
-  @media (max-width: 768px) {
-  .gallery-item {
-  flex: 1 0 calc(50% - 10px); /* Two photos per row on medium screens */
-  max-width: calc(50% - 10px);
-  }
-  }
-
-  @media (max-width: 576px) {
-  .gallery-item {
-  flex: 1 0 100%; /* One photo per row on small screens */
-  max-width: 100%;
-  }
-  }
-  </style>
- </head>
- <body>
-
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="index.html">Alexander Haywood</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" href="index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="publications.html">Publications</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="teaching.html">Teaching</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="projects.html">Projects</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="photos.html">Photos</a>
-        </li>
-      </ul>
-      </ul>
+    <div id="imageModal" class="image-modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="expandedImg">
     </div>
-  </div>
-</nav>
 
- <canvas id="canvas-image-blending" style="height: 300px;"></canvas> <div class="main-content" style="text-align: center; width: 100%;">
-  <center>
+    <footer>
+        <div class="container footer-content">
+            <p>&copy; <span id="year"></span> Alexander Haywood. All rights reserved.</p>
+        </div>
+    </footer>
 
-  <h2 style="padding-bottom: 20px;">Photos</h2>
-  <div class="photo-gallery">
-
-  <div class="gallery-item">
-  <img src="assets/DSCF3236.JPG" alt="Photo 1 Description">
-  </div>
-  <div class="gallery-item">
-  <img src="assets/DSCF3247.JPG" alt="Photo 2 Description">
-  </div>
-  <div class="gallery-item">
-  <img src="assets/DSCF3344.JPG" alt="Photo 3 Description">
-  </div>
-
-  <div class="gallery-item">
-  <img src="assets/DSCF2400.jpg" alt="Photo 1 Description">
-  </div>
-  <div class="gallery-item">
-  <img src="assets/DSCF1681_1.jpg" alt="Photo 2 Description">
-  </div>
-  <div class="gallery-item">
-  <img src="assets/DSCF2190-2_1.jpg" alt="Photo 3 Description">
-  </div>
-  <div class="gallery-item">
-  <img src="assets/DSCF2492-2.jpg" alt="Photo 4 Description">
-  </div>
-  <div class="gallery-item">
-  <img src="assets/DSCF8288-min.jpg" alt="Photo 5 Description">
-  </div>
-  <div class="gallery-item">
-  <img src="assets/DSCF7818-min.jpg" alt="Photo 6 Description">
-  </div>
-  <div class="gallery-item">
-  <img src="assets/DSCF1262.JPG" alt="Photo 1 Description">
-  </div>
-  <div class="gallery-item">
-  <img src="assets/DSCF3700-min.jpg" alt="Photo 2 Description">
-  </div>
-  <div class="gallery-item">
-  <img src="assets/DSCF6783.jpg" alt="Photo 3 Description">
-  </div>
-   <div class="gallery-item">
-  <img src="assets/DSCF8147-min.jpg" alt="Photo 4 Description">
-  </div>
-  <div class="gallery-item">
-  <img src="assets/DSCF8149-min.jpg" alt="Photo 5 Description">
-  </div>
-  <div class="gallery-item">
-  <img src="assets/DSCF1612_1.jpg" alt="Photo 6 Description">
-  </div>
-  <div class="gallery-item">
-  <img src="assets/P1000744.jpg" alt="Photo 6 Description">
-  </div>
-  <div class="gallery-item">
-  <img src="assets/P1000854.jpg" alt="Photo 6 Description">
-  </div>
-  <div class="gallery-item">
-  <img src="assets/P1000596.jpg" alt="Photo 6 Description">
-  </div>
-  <div class="gallery-item">
-  <img src="assets/DSCF3890-min.jpg" alt="Photo 6 Description">
-  </div>
-  <div class="gallery-item">
-  <img src="assets/DSCF3807-min.jpg" alt="Photo 6 Description">
-  </div>
-  <div class="gallery-item">
-  <img src="assets/DSCF8490-min.jpg" alt="Photo 6 Description">
-  </div>
-  </div>
-
-  </center>
- </div>
-
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
- </body>
- </html>
+    <script src="script.js"></script>
+    <script>
+        // Modal Logic for Expandable Photos
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("expandedImg");
+            const closeBtn = document.querySelector(".close-modal");
+            
+            // Attach click event to all photos
+            document.querySelectorAll('.photo-img').forEach(img => {
+                img.addEventListener('click', function() {
+                    modal.style.display = "block";
+                    modalImg.src = this.src; // Push clicked image source to the modal
+                });
+            });
+            
+            // Close when 'X' is clicked
+            closeBtn.addEventListener('click', () => {
+                modal.style.display = "none";
+            });
+            
+            // Close when background is clicked
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.style.display = "none";
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Personal Website - Teaching</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="granim.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Add CSS for navigation positioning if needed */
+        nav {
+            position: relative; /* Or 'fixed' */
+            z-index: 1000;
+            width: 100%;
+        }
+
+        /* Adjust padding for main content to prevent it from being hidden under the nav bar */
+        .main-content {
+            padding: 5% 5%;
+            padding-top: calc(5% + 60px); /* Adjust based on nav height */
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Style for the teaching content container, mirroring .publications-content */
+       .teaching-content {
+            text-align: left; /* Align text content left within this block */
+            max-width: 900px; /* Adjust this value for desired width, matches publications */
+            margin: 0 auto; /* Centers the container, matches publications */
+            padding-top: 20px; /* Add some space below the main heading, matches publications */
+        }
+
+        /* Style for the main page title (Teaching) - Now using h2 */
+        .main-content h2 { /* Changed from h1 to h2 to match publications structure */
+             text-align: center; /* Center the main heading */
+             padding-bottom: 20px; /* Space below the main heading, matches publications h2 inline style */
+             /* Font size and weight will now come from styles.css h2 rule */
+        }
+
+        /* Style for individual teaching entry titles (now using p with a class) */
+        .teaching-entry-title { /* New class to style teaching entry titles */
+            margin-top: 20px; /* Space above the entry title */
+            margin-bottom: 5px; /* Space below the entry title, matches publications bold paragraph */
+            font-weight: bold; /* Make entry titles bold, matches publications bold paragraph */
+            font-size: 1.2rem; /* Explicitly set to match paragraph size from styles.css */
+            /* Color will come from styles.css p rule */
+        }
+
+
+         /* Style for course details (like Undergraduate course, Princeton, ...) */
+         .teaching-entry .course-details {
+             font-style: italic; /* Make text italic, matches publications italic paragraph */
+             margin-bottom: 10px; /* Space below course details, matches publications italic paragraph */
+             /* Font size and weight will come from styles.css p rule */
+         }
+
+         /* Style for the description paragraph */
+         .teaching-entry .description {
+             margin-bottom: 10px; /* Space below description, matches publications description paragraph */
+             /* Font size and weight will come from styles.css p rule */
+         }
+
+         /* Basic paragraph styling for consistency, can adjust font-size and line-height if needed */
+         .teaching-content p {
+             /* margin-bottom: 10px; /* Default space between paragraphs, matches publications paragraphs - already set on specific paragraphs */
+             /* Font size and weight will come from styles.css p rule */
+         }
+
+
+        /* Style for the horizontal rule separators */
+        .teaching-content hr {
+            margin: 30px 0; /* Separator between entries, matches publications hr */
+        }
+
+    </style>
+  </head>
+  <body>
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Alexander Haywood</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a> </li>
+          <li class="nav-item">
+            <a class="nav-link" href="publications.html">Publications</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="teaching.html">Teaching</a> </li>
+          <li class="nav-item">
+            <a class="nav-link" href="projects.html">Projects</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="photos.html">Photos</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+    <canvas id="canvas-image-blending" style="height: 300px;"></canvas>
+
+    <div class="main-content">
+      <h2>Teaching</h2> <div class="teaching-content">
+
+        <div class="teaching-entry">
+          <p class="teaching-entry-title">Engineering Design & Senior Thesis</p> <p class="course-details">Undergraduate course, Princeton, Mechanical and Aerospace Engineering, 2025</p>
+          <p class="description">I guided students through design, manufacture, and integration of mechanical components by running weekly lab sessions. I also helped students through implementation of their thesis projects.</p>
+        </div>
+
+        <hr> <div class="teaching-entry">
+          <p class="teaching-entry-title">Mechanical Design and Autonomous Control</p> <p class="course-details">Undergraduate course, Princeton, Mechanical and Aerospace Engineering, 2024</p>
+          <p class="description">I taught students programming methods for autonomous control and image-recognition via curated guides and active lessons. I also guided students through design, manufacture, and integration of mechanical components by running weekly lab sessions.</p>
+        </div>
+
+        <hr> <div class="teaching-entry">
+          <p class="teaching-entry-title">Statistical Mechanics Tutor</p> <p class="course-details">Undergraduate course, Princeton, Mechanical and Aerospace Engineering, 2023</p>
+          <p class="description">I tutored three students in Statistical Mechanics, focusing on practice-based methods via weekly example problems that rewarded creative solutions.</p>
+        </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <script>
+        var granimInstance = new Granim({
+            element: '#canvas-image-blending',
+            direction: 'diagonal',
+            isImageDepixelatedToCanvas: false, // Set to true if you blend images
+            image: {
+                source: 'assets/gradient-image.jpg', // Replace with your image path
+                blendingMode: 'multiply' // Or another blending mode
+            },
+            stateData: {
+                "default-state": {
+                    gradients: [
+                        ['#29323c', '#485563'],
+                        ['#5b4a6e', '#e4c4d1'],
+                        ['#ff6e7f', '#bfe9ff']
+                    ],
+                    transitionSpeed: 5000
+                }
+            }
+        });
+    </script>
+
+  </body>
+</html>

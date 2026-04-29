@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Personal Website - Home</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <script src="granim.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+
+        nav {
+            position: relative; 
+            z-index: 1000;
+            width: 100%;
+        }
+
+        .below-image-info {
+            margin-top: 0;
+            text-align: center;
+        }
+
+        /* Style for the top section */
+        #top {
+            height: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white; /* Default color for elements inside #top */
+        }
+
+        /* Specific color for the H1 */
+        #top h1 {
+            color: #F5F5F5;
+        }
+
+        /* Specific off-white color for the typewriter text */
+        #app {
+            color: #EEEEEE; /* Off-white color */
+        }
+
+        /* Remove inline padding from h1 and p in #top */
+        #top h1,
+        #top p {
+            padding-top: 0 !important;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        /* Modified #introduction styles - Increased vertical padding */
+        #introduction {
+            padding-bottom: 60px; /* Increased from 50px */
+            padding-top: 30px; /* Increased from 20px */
+            margin-top: 0;
+            flex-direction: column;
+        }
+
+        /* Modified Rule for big-container-left - Increased horizontal gap */
+        /* .big-container-left was moved to styles.css */
+
+        /* Style for the main #introduction flex container */
+        #introduction.flex-container {
+            display: flex;
+            flex-direction: column; /* Stacks button row and text/photo row vertically */
+            align-items: center; /* Centers the button row horizontally */
+        }
+        /* Style for the inner flex container holding text and photo */
+        /* This inline style is preserved here for the inner div as it's not a direct CSS rule */
+        /* div style="display: flex; flex-wrap: wrap; width: 100%; justify-content: flex-start;" */
+    </style>
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">Alexander Haywood</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="publications.html">Publications</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="teaching.html">Teaching</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="projects.html">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="photos.html">Photos</a>
+            </li>
+            </ul>
+        </div>
+      </div>
+    </nav>
+
+    <canvas id="canvas-image-blending"></canvas>
+
+    <div class="main-content" style="text-align: center; width: 100%;">
+
+        <div id="top"> <h1>Hi, my name is Alexander Haywood</h1> <p id="app"></p> </div>
+
+        <div id="introduction" class="flex-container">
+            <div class="horizontal-links">
+                <div class="info-item">
+                    <a href="https://drive.google.com/file/d/1yTiLJWytm6LipYYL7_iB_qHPJ2gGSKFv/view?usp=sharing" target="_blank" aria-label="Resume">
+                        <i class="fa fa-university"></i> Resume
+                    </a>
+                </div>
+                <div class="info-item">
+                    <a href="https://scholar.google.com/citations?view_op=list_works&hl=en&user=LzRSGlgAAAAJJ" target="_blank" aria-label="Google Scholar">
+                        <i class="fa fa-google"></i> Google Scholar
+                    </a>
+                </div>
+                <div class="info-item">
+                    <a href="https://www.linkedin.com/in/alexander-haywood" target="_blank" aria-label="LinkedIn">
+                        <i class="fa fa-linkedin"></i> LinkedIn
+                    </a>
+                </div>
+                <div class="info-item">
+                    <a href="mailto:ahaywood@princeton.edu" aria-label="Email">
+                        <i class="fa fa-envelope"></i> Email
+                    </a>
+                </div>
+            </div>
+
+
+          <p style="margin-bottom: 90px;">
+
+          <style>
+          .my-section {
+              padding-top: 30px; /* Adds 30px of space inside the top of the div */
+              margin-bottom: 40px; /* Adds 40px of space below the entire div */
+              border: 1px solid #ccc; /* Just for visualization */
+          }
+          </style>
+
+
+            <div style="display: flex; flex-wrap: wrap; width: 100%; justify-content: flex-start;">
+                <div class="big-container-left">
+                    <p style="padding-bottom: 5px;">My name is Alexander Haywood, and I am a graduating master's student in Electrical and Computer Engineering at Princeton pursuing research in Condensed Matter Theory. Before this, I received a degree in Mechanical and Aerospace Engineering at Princeton with minors in Physics and Applied Mathematics, focused on plasma physics theory.</p>
+                    <p style="padding-bottom: 5px;">My research interests lie broadly in condensed matter theory. However, I am particularly interested in the study of novel models and phases. Before pursuing a PhD, I am pursuing research with Professor Biao Lian in the Princeton physics department.</p>
+                    <p style="padding-bottom: 5px;">This website is a compilation of my previous work and hobbies, all of which gave me the skills, experience, and context to pursue my current path in Physics. </p>
+                </div>
+                <div class="small-container-right">
+                    <img src="assets/Portrait.jpg" class="title-image" alt="Alexander Haywood's Portrait">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <span class="closeModal1">&times;</span>
+            <p>Content for Modal 1 (Princeton University)</p>
+        </div>
+    </div>
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="closeModal2">&times;</span>
+            <p>Content for Modal 2 (Google Scholar)</p>
+        </div>
+    </div>
+
+    <div id="modal3" class="modal">
+        <div class="modal-content">
+            <span class="closeModal3">&times;</span>
+            <p>Content for Modal 3 (ORCID - based on btnModal3 in your JS, though not in your last HTML example)</p>
+        </div>
+    </div>
+
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <span class="closeModal4">&times;</span>
+            <p>Content for Modal 4 (LinkedIn)</p>
+        </div>
+    </div>
+
+    <div id="modal5" class="modal">
+        <div class="modal-content">
+            <span class="closeModal5">&times;</span>
+            <p>Content for Modal 5 (Email)</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="index.js" charset="utf-8"></script>
+  </body>
+</html>
