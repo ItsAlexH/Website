@@ -49,7 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Scroll Reveal Animation using Intersection Observer
     const revealElements = document.querySelectorAll('.reveal');
-    const observerOptions = { threshold: 0.15, rootMargin: '0px 0px -50px 0px' };
+    // Forgiving observer options: trigger slightly before it hits the viewport 
+    const observerOptions = { threshold: 0.05, rootMargin: '0px 0px 100px 0px' };
     
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -60,7 +61,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    revealElements.forEach(el => revealObserver.observe(el));
+    revealElements.forEach(el => {
+        revealObserver.observe(el);
+        // Fallback: Instantly reveal anything that is already above the fold on load
+        if (el.getBoundingClientRect().top < window.innerHeight) {
+            el.classList.add('active');
+        }
+    });
 
     // Smooth Scroll for Anchor Links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
